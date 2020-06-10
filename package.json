@@ -57,5 +57,10 @@
 		"redux-observable": "^1.2.0",
 		"rxjs": "^6.5.5",
 		"socket.io-client": "^2.3.0"
+	},
+	"devDependencies": {
+		"webpack": "^4.43.0",
+		"webpack-cli": "^3.3.11",
+		"webpack-dev-server": "^3.11.0"
 	}
 }
