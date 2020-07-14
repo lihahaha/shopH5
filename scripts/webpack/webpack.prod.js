@@ -26,7 +26,7 @@ const prodConfig = merge(baseConfig, {
             template: 'src/index.html',
             filename: 'index.html',
             inject: true,
-            chunks: ['runtime'],
+            // chunks: ['runtime'],
             minity: {
                 removeComments: true,
                 collapseWhitespace: true,

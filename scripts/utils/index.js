@@ -88,4 +88,6 @@ module.exports = {
     getLocalServer,
     getPublishServer,
     getDefined,
+    chunkHash,
+    contentHash
 }

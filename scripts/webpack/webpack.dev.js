@@ -26,7 +26,7 @@ const devConfig = merge(baseConfig, {
             template: 'src/index.html',
             filename: 'index.html',
             inject: true,
-            chunks: ['runtime'],
+            // chunks: ['runtime'],
             minity: {
                 removeComments: true,
                 collapseWhitespace: true,
@@ -39,8 +39,10 @@ const devConfig = merge(baseConfig, {
     devServer: {
         port: 3000,
         contentBase: resolveCwd("dist"),
+        watchContentBase: true,
         index: 'index.html',
         hot: true,
+        inline: true,
         open: 'Chrome',
         clientLogLevel: 'error',
         overlay: {

@@ -13,19 +13,19 @@ const ThreadPool = HappyPack.ThreadPool;
 const happyThreadPool = ThreadPool({ size: cpus().length - 1 });
 
 const { resolveCwd, resolveDir, getPublishServer,
-    isDev, getLocalServer, getDefined, contentHash, chunkhash } = require('../utils');
-
+    isDev, getLocalServer, getDefined, contentHash, chunkHash } = require('../utils');
+console.log(chunkHash)
 const baseConfig = {
     mode: 'development',
     entry: {
         main: './src/index.js'
     },
     output: {
-        filename: `js/[name]${chunkhash}.js`,
-        chunkFilename: `js/[name]${chunkhash}.js`,
+        filename: `js/[name]${chunkHash}.js`,
+        chunkFilename: `js/[name]${chunkHash}.js`,
         path: resolveCwd('./dist'),
-        publicPath: isDev ? getLocalServer() : getPublishServer()
-        // publicPath: './dist/'
+        // publicPath: isDev ? getLocalServer() : getPublishServer()
+        publicPath: './'
     },
     module: {
         noParse: function(content) {
