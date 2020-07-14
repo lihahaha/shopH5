@@ -20,6 +20,8 @@
 19. cross-env  NODE_ENV=development webpack-dev-server --trace-warnings --open --config scripts/webpack/webpack.dev.js 参数详细 --open --config
 20. 打包时命令行显示信息处理
 21. webpack配置时没写在根目录下，entry路径还是相对src写
+22. HotModuleReplacementPlugin 原理
+23. package中用webpack和node执行的区别
 ###  webpack 构建优化
 1. 多线程压缩  happypack
 2. pollify

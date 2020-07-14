@@ -6,6 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const cpus = os.cpus;
 const ThreadPool = HappyPack.ThreadPool;
@@ -20,10 +21,11 @@ const baseConfig = {
         main: './src/index.js'
     },
     output: {
-        filename: `[name]${contentHash}.js`,
-        chunkFilename: `[name]${contentHash}.js`,
+        filename: `js/[name]${chunkhash}.js`,
+        chunkFilename: `js/[name]${chunkhash}.js`,
         path: resolveCwd('./dist'),
         publicPath: isDev ? getLocalServer() : getPublishServer()
+        // publicPath: './dist/'
     },
     module: {
         noParse: function(content) {
@@ -78,6 +80,11 @@ const baseConfig = {
         new CleanWebpackPlugin(),
         // 强制所有模块的完整路径必需与磁盘上实际路径的确切大小写相匹配,linux max windows
         new CaseSensitivePathsPlugin(),
+        // new CopyWebpackPlugin({
+        //     patterns: [
+        //         { from: 'Aliplayer', to: 'Aliplayer' }
+        //     ],
+        // }),
         // 多线程
         new HappyPack({
             id: 'happyBabel',
