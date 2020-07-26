@@ -11,8 +11,8 @@
 	"author": "neal",
 	"license": "ISC",
 	"scripts": {
-		"dev": "cross-env  NODE_ENV=development webpack-dev-server --trace-warnings --open --config webpack.dev.config.js",
-		"start": "cross-env  NODE_ENV=development webpack-dev-server --trace-warnings --open --config ./scripts/webpack/webpack.dev.js",
+		"dev": "cross-env  NODE_ENV=development node --trace-warnings webpack.dev.config.js",
+		"start": "cross-env  NODE_ENV=development node --trace-warnings ./scripts/webpack/webpack.dev.js",
 		"build": "cross-env NODE_ENV=production node --trace-warnings ./scripts/webpack/webpack.prod.js",
 		"lint": "",
 		"commit-check": "node scripts/githooks/ignoreCheck.js",

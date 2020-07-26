@@ -35,36 +35,47 @@ const devConfig = merge(baseConfig, {
             }
         }),
         new webpack.HotModuleReplacementPlugin(),
-    ],
-    devServer: {
-        port: 3000,
-        contentBase: resolveCwd("dist"),
-        watchContentBase: true,
-        index: 'index.html',
-        hot: true,
-        inline: true,
-        open: 'Chrome',
-        clientLogLevel: 'error',
-        overlay: {
-            errors: true,
-        },
-        quiet: true,
-        disableHostCheck: true,
-        proxy: {
-            "/api": {
-                target: "http://live.com",
-                changeOrigin: true,
-                pathRewrite: {
-                    "^/api" : "/"
-                }
-            }
-        },
-        before: (app) => {
-            app.all('*', (req, res, next) => {
-                res.header('Access-Control-Allow-Origin', '*');
-                next();
-            });
-        }
-    }
+    ]
 });
-module.exports = devConfig;
+
+const devServer = {
+    port: 3000,
+    contentBase: resolveCwd("dist"),
+    watchContentBase: true,
+    index: 'index.html',
+    hot: true,
+    inline: true,
+    open: 'Chrome',
+    clientLogLevel: 'error',
+    overlay: {
+        errors: true,
+    },
+    quiet: true,
+    disableHostCheck: true,
+    proxy: {
+        "/api": {
+            target: "http://live.com",
+            changeOrigin: true,
+            pathRewrite: {
+                "^/api" : "/"
+            }
+        }
+    },
+    before: (app) => {
+        app.all('*', (req, res, next) => {
+            res.header('Access-Control-Allow-Origin', '*');
+            next();
+        });
+    }
+}
+
+const compiler = webpack(devConfig);
+const server = new webpackDevServer(compiler, devServer);
+
+const hotMiddleware = webpackHotMiddleware(compiler);
+
+server.use(hotMiddleware);
+
+server.listen(3000, () => {
+    console.log(`Start dev server on port ${3000}`);
+});
