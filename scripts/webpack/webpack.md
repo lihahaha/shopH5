@@ -22,6 +22,7 @@
 21. webpack配置时没写在根目录下，entry路径还是相对src写
 22. HotModuleReplacementPlugin 原理
 23. package中用webpack和node执行的区别
+24. publicPath: '/' historyApiFallback: true, 路由404报错
 ###  webpack 构建优化
 1. 多线程压缩  happypack
 2. pollify

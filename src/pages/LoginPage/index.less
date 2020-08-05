@@ -1,0 +1,118 @@
+.Login-header {
+    width: 100%;
+    height: 50px;
+    background: #eee;
+    .Login-flex {
+        display: flex;
+        align-items: center;
+        .Login-icon {
+            width: 30px;
+            height: 30px;
+            background-color: orange;
+            border: 1px solid #888;
+            border-radius: 50%;
+            margin: 0 20px;
+            line-height: 30px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .Login-font {
+            width: 100px;
+            line-height: 50px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+}
+.Login-content {
+    width: 100%;
+    height: calc(100% - 100px);
+    
+    .Login-content-warp {
+        width: 360px;
+        height: 320px;
+        background-color: #fff;
+        float: right;
+        margin: 100px;
+        padding: 40px;
+        border-radius: 10px;
+
+        .Login-content-item {
+            padding-top: 20px;
+            height: 40px;
+            position: relative;
+            .ipt {
+                // padding-right: 4px;
+                // margin-top: 20px;
+                // line-height: 35px;
+                // border: 1px solid #ddd;
+                // border-radius: 4px;
+                // color: #ddd;
+                font-size: 14px;
+                font-family: "microsoft yahei", Arial;
+                transition: border-color .3s ease 0s;
+                outline: 0;
+            }
+            .ipt-style {
+                outline: none;
+                border: none;
+                width: 100%;
+                height: 37px;
+                font-size: 16px;
+                line-height: 40px;
+                padding-left: 4px;
+                // margin-top: -4px;
+                border-bottom: 1px solid #e9e9e9;
+            }
+            .pw-span {
+                position: absolute;
+                // right: 10px;
+                width: 24px;
+                height: 24px;
+                cursor: pointer;
+                z-index: 2;
+                display: inline-block;
+            }
+            .pw-hide1, .pw-hide2 {
+                top: 28px;
+                right: 1px;
+            }
+            .pw-show {
+                top: 28px;
+                right: 1px;
+                background: url('../../assets/image/login/canSee.png') no-repeat center;
+                background-size: 100%;
+            }
+        }
+        .Login-submit-warp {
+            .loginbox-sbt {
+                width: 300px;
+                height: 40px;
+                line-height: 40px;
+                color: #fff;
+                cursor: pointer;
+                display: block;
+                font-size: 18px;
+                letter-spacing: 2px;
+                font-family: "微软雅黑", Arial;
+                text-align: center;
+                border: none;
+                background: #F70;
+                margin: 40px auto 0;
+                background-image: linear-gradient(90deg, #FF6A00 0%, #FF4823 100%);
+                box-shadow: 0 2px 12px 0 rgba(255,72,35,0.30);
+                border-radius: 8px;
+            }
+        }
+    }
+}
+
+.Login-footer {
+    width: 100%;
+    height: 50px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+}

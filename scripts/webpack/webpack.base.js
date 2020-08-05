@@ -25,7 +25,7 @@ const baseConfig = {
         chunkFilename: `js/[name]${chunkHash}.js`,
         path: resolveCwd('./dist'),
         // publicPath: isDev ? getLocalServer() : getPublishServer()
-        publicPath: './'
+        publicPath: '/'
     },
     module: {
         noParse: function(content) {
@@ -100,7 +100,7 @@ const baseConfig = {
             loaders: [
                 {
                     loader: require.resolve('css-loader'),
-                    options: { minimize: !isDev }
+                    // options: { minimize: !isDev }
                 },
                 require.resolve('postcss-loader'),
                 require.resolve('less-loader')

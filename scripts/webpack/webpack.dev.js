@@ -52,6 +52,7 @@ const devServer = {
     },
     quiet: true,
     disableHostCheck: true,
+    historyApiFallback: true,
     proxy: {
         "/api": {
             target: "http://live.com",
