@@ -44,7 +44,7 @@
 		"lodash": "^4.17.15",
 		"moment": "^2.26.0",
 		"qr.js": "0.0.0",
-		"qs": "^6.9.4",
+		"qs": "^6.9.7",
 		"react": "^16.13.1",
 		"react-beautiful-dnd": "^13.0.0",
 		"react-custom-scrollbars": "^4.2.1",
